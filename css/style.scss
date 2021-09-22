@@ -1,0 +1,234 @@
+@charset "UTF-8";
+@import "variables";
+
+/* 共通 */
+
+// 「destyle.css」から一部を抜粋
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+::before , ::after {
+	box-sizing: inherit;
+}
+button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	color: inherit;
+	vertical-align: middle;
+	text-align: inherit;
+	font: inherit;
+	-webkit-appearance: none;
+	appearance: none;
+}
+// 「destyle.css」から一部を抜粋（ここまで）
+
+html {
+  font-size: 100%;
+  letter-spacing: .1em;
+}
+
+body {
+  width: 100%;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  margin:0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.wrapper {
+  // background: silver;
+  width: 830px;
+}
+
+/* ヘッダー */
+.header {
+  // background: yellow;
+  // height: 100px;
+
+  .header-wrapper {
+    // background: #ccc;
+    
+    .logo {
+      text-align: left;
+      padding-left: 50px;
+      padding-top: 40px;
+    }
+
+    .logo-img {
+      // background: gray;
+      width: 100px;
+      // height: 100px; 高さをpx指定すると、ロゴの上下に余白ができる。
+      height: auto;
+    }
+
+    .btn {
+      /* ボタンの配置位置  */
+      position: fixed;
+      top: 0;
+      right: 0;
+      /* ボタンの大きさ  */
+      width: 100px;
+      height: 100px;
+      /* 最前面に */
+      z-index: 10;
+      background-color: $main-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    /***** 真ん中のバーガー線 *****/
+    .btn-line {
+      display: block;
+      position: relative;  /* バーガー線の位置基準として設定 */
+      width: 50px;  /* 線の長さと高さ */
+      height: 2px;
+      background-color: #fff;  /* バーガー線の色 */
+      transition: .2s;
+    }
+
+    /****** 上下のバーガー線 *****/
+    .btn-line::before,
+    .btn-line::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      transition: .5s;
+    }
+    .btn-line::before {
+      /* 上の線の位置 */
+      transform: translateY(-14px);
+    }
+    .btn-line::after {
+      /* 下の線の位置 */
+      transform: translateY(14px);
+    }
+
+    /***** メニューオープン時 *****/
+    .btn-line.open {
+      background-color: transparent;  	/* 真ん中の線を透明に */
+    }
+    .btn-line.open::before ,
+    .btn-line.open::after {
+      content: "";
+      // background-color: #333;  /* 上下の線の色を変える */
+      transition: .2s;
+    }
+    .btn-line.open::before {
+      transform: rotate(45deg);  /* 上の線を傾ける */
+    }
+    .btn-line.open::after {
+      transform: rotate(-45deg);  /* 下の線を傾ける */
+    }
+    .menu {
+      background: $main-color;
+      color: #fff;
+      display: none;
+      font-weight: 700;
+      height: 100%;
+      line-height: 1;
+      position: fixed;
+        top:0;
+        left:0;
+      text-align: center;
+      width: 100%;
+
+        a {
+          color: #fff;
+        }
+        .menu-list {
+          margin-bottom: 20px;
+        }
+        .menu-list:last-child {
+          margin-bottom: 40px;
+        }
+        .entry {
+          border: 1px solid #fff;
+          display: inline-block;
+          // padding: 15px 46px;
+          height: 46px;
+          line-height: 46px;
+          position: relative;
+          width: 250px;
+        }
+
+        .entry::after {
+          border-bottom: 1px solid #fff;
+          border-right: 1px solid #fff;
+          content: "";
+          height: 46px;
+          width: 250px;
+          position: absolute;
+            bottom:-6px;
+            right: -6px;
+        }
+        &.open {
+          display: block;
+        }
+
+      }
+
+  } 
+}
+
+
+
+
+/*画面幅が767px以下の場合（スマホ）に適用するCSSを記入*/
+@media screen and (max-width: 900px) {
+  .header {
+    .header-wrapper {
+      .logo {
+        // background: lime;
+        padding-left: 25px;
+        padding-top: 25px;
+        margin-bottom: 28.7px;
+      }
+
+      .btn {
+        height: 75px;
+        width: 75px;
+      }
+      .btn-line {
+        width: 35px;
+      }
+      .btn-line::before {
+        transform: translateY(-11px);
+      }
+      .btn-line::after {
+        transform: translateY(11px);
+      }
+  
+    }
+  }
+
+  .wrapper {
+    width: calc( 100% - 32px );
+  }
+}
+
+/* 作業用CSS */
+
+/* * { outline:2px solid red; } */
+/* .first-view { display: none; } */
+  /* header { display: none; } */
+  /* #about { display: none; }  */
+/* #feature { display: none; }  */
+/* #plan { display: none; }  */
+/* #news { display: none; }  */
+/* #access { display: none; }  */
+/* footer { display: none; }  */

@@ -1,0 +1,240 @@
+@charset "UTF-8";
+/* 共通 */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::before, ::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  vertical-align: middle;
+  text-align: inherit;
+  font: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+
+html {
+  font-size: 100%;
+  letter-spacing: .1em;
+}
+
+body {
+  width: 100%;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.wrapper {
+  width: 830px;
+}
+
+/* ヘッダー */
+.header .header-wrapper {
+  /***** 真ん中のバーガー線 *****/
+  /****** 上下のバーガー線 *****/
+  /***** メニューオープン時 *****/
+}
+
+.header .header-wrapper .logo {
+  text-align: left;
+  padding-left: 50px;
+  padding-top: 40px;
+}
+
+.header .header-wrapper .logo-img {
+  width: 100px;
+  height: auto;
+}
+
+.header .header-wrapper .btn {
+  /* ボタンの配置位置  */
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* ボタンの大きさ  */
+  width: 100px;
+  height: 100px;
+  /* 最前面に */
+  z-index: 10;
+  background-color: #FF2A2A;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .header-wrapper .btn-line {
+  display: block;
+  position: relative;
+  /* バーガー線の位置基準として設定 */
+  width: 50px;
+  /* 線の長さと高さ */
+  height: 2px;
+  background-color: #fff;
+  /* バーガー線の色 */
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.header .header-wrapper .btn-line::before,
+.header .header-wrapper .btn-line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.header .header-wrapper .btn-line::before {
+  /* 上の線の位置 */
+  -webkit-transform: translateY(-14px);
+          transform: translateY(-14px);
+}
+
+.header .header-wrapper .btn-line::after {
+  /* 下の線の位置 */
+  -webkit-transform: translateY(14px);
+          transform: translateY(14px);
+}
+
+.header .header-wrapper .btn-line.open {
+  background-color: transparent;
+  /* 真ん中の線を透明に */
+}
+
+.header .header-wrapper .btn-line.open::before,
+.header .header-wrapper .btn-line.open::after {
+  content: "";
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.header .header-wrapper .btn-line.open::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  /* 上の線を傾ける */
+}
+
+.header .header-wrapper .btn-line.open::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  /* 下の線を傾ける */
+}
+
+.header .header-wrapper .menu {
+  background: #FF2A2A;
+  color: #fff;
+  display: none;
+  font-weight: 700;
+  height: 100%;
+  line-height: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.header .header-wrapper .menu a {
+  color: #fff;
+}
+
+.header .header-wrapper .menu .menu-list {
+  margin-bottom: 20px;
+}
+
+.header .header-wrapper .menu .menu-list:last-child {
+  margin-bottom: 40px;
+}
+
+.header .header-wrapper .menu .entry {
+  border: 1px solid #fff;
+  display: inline-block;
+  height: 46px;
+  line-height: 46px;
+  position: relative;
+  width: 250px;
+}
+
+.header .header-wrapper .menu .entry::after {
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  content: "";
+  height: 46px;
+  width: 250px;
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+}
+
+.header .header-wrapper .menu.open {
+  display: block;
+}
+
+/*画面幅が767px以下の場合（スマホ）に適用するCSSを記入*/
+@media screen and (max-width: 900px) {
+  .header .header-wrapper .logo {
+    padding-left: 25px;
+    padding-top: 25px;
+    margin-bottom: 28.7px;
+  }
+  .header .header-wrapper .btn {
+    height: 75px;
+    width: 75px;
+  }
+  .header .header-wrapper .btn-line {
+    width: 35px;
+  }
+  .header .header-wrapper .btn-line::before {
+    -webkit-transform: translateY(-11px);
+            transform: translateY(-11px);
+  }
+  .header .header-wrapper .btn-line::after {
+    -webkit-transform: translateY(11px);
+            transform: translateY(11px);
+  }
+  .wrapper {
+    width: calc( 100% - 32px);
+  }
+}
+
+/* 作業用CSS */
+/* * { outline:2px solid red; } */
+/* .first-view { display: none; } */
+/* header { display: none; } */
+/* #about { display: none; }  */
+/* #feature { display: none; }  */
+/* #plan { display: none; }  */
+/* #news { display: none; }  */
+/* #access { display: none; }  */
+/* footer { display: none; }  */
+/*# sourceMappingURL=style.css.map */
