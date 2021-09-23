@@ -1,4 +1,6 @@
 $(function() {
+
+  // ハンバーガーメニュー
   $('.js-btn').click(function() {
   // クリックされたとき、
     
@@ -19,9 +21,9 @@ $(function() {
 
       $('.js-btn, .btn-line').addClass('open')
       // .openを付与
-      
     }
-
-  });
+  }); // ハンバーガーメニュー（ここまで）
   
+  
+
 });
