@@ -53,12 +53,8 @@ img {
 
 /* ヘッダー */
 .header {
-  // background: yellow;
-  // height: 100px;
-
   .header-wrapper {
     // background: #ccc;
-    
     .logo {
       text-align: left;
       padding-left: 50px;
@@ -146,7 +142,7 @@ img {
         left:0;
       text-align: center;
       width: 100%;
-
+      z-index: 2;
         a {
           color: #fff;
         }
@@ -374,7 +370,7 @@ img {
 
 /* 作業用CSS */
 
-/* * { outline:2px solid red; } */
+// * { outline:2px solid red; }
 /* .first-view { display: none; } */
   /* header { display: none; } */
   /* #about { display: none; }  */

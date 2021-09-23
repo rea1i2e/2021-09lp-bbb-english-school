@@ -162,6 +162,7 @@ img {
   left: 0;
   text-align: center;
   width: 100%;
+  z-index: 2;
 }
 
 .header .header-wrapper .menu a {
@@ -399,7 +400,6 @@ img {
 }
 
 /* 作業用CSS */
-/* * { outline:2px solid red; } */
 /* .first-view { display: none; } */
 /* header { display: none; } */
 /* #about { display: none; }  */
