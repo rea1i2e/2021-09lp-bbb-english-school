@@ -24,8 +24,7 @@ button {
 	font: inherit;
 	-webkit-appearance: none;
 	appearance: none;
-}
-// 「destyle.css」から一部を抜粋（ここまで）
+}// 「destyle.css」から一部を抜粋（ここまで）
 
 html {
   font-size: 100%;
@@ -49,6 +48,7 @@ img {
 .wrapper {
   // background: silver;
   width: 830px;
+  margin: 0 auto;
 }
 
 /* ヘッダー */
@@ -180,7 +180,10 @@ img {
 
   } 
 }
+
+// メインビジュアル
 .main-visual {
+  margin-bottom: 120px;
   .main-visual-wrapper {
       display: flex;
       position: relative;
@@ -295,25 +298,94 @@ img {
   }
 }
 
+.heading3 {
+  // background: yellowgreen;
+  display: inline-block;
+  font-size: 2.25rem;
+  position: relative;
+  margin-bottom: 100px;
+  &::after {
+    content:"";
+    display:block;
+    width:100px;
+    height:3px;
+    background-color:#333;
+    position:absolute;
+    bottom: -10px;
+    left:calc( 50% - 50px );
+  }
+}
 
+.reason, .wrapper {
+  text-align: center;
+}
 
+.reason-list-wrapper {
+  background: $main-color;
+  padding: 80px 0;
+  .reason-list {
+    // background:yellowgreen;
+    &:nth-child(even) {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .reason-desc-wrapper {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 70px 0;
+      width: 700px;
+      .icon-pc {
+        height: 60px;
+        width: 87px;
+      }
+      .teacher-img {
+        border-radius: 10px;
+        height: 60px;
+        object-fit: cover;
+        width: 60px;
+      }
+      .reason-desc {
+        padding-left: 30px;
+        .reason-heading {
+          color: $main-color;
+          font-size:  1.75rem;
+          text-align: left;
+        }
+        .desc {
+          font-size: 1.125rem;
+          text-align: left;
+        }
+      }
+    }
+     &:nth-child(odd) .reason-desc-wrapper {
+       border-top-right-radius: 20px;
+       border-bottom-right-radius: 20px;
+      //  padding: 70px  0 70px 162px;
+    }
+    &:nth-child(even) .reason-desc-wrapper {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      // padding: 70px 0 70px 158px;
+    }
+    &:not(:last-child) .reason-desc-wrapper {
+      margin-bottom: 40px;
+    }
+  }
+}
 
-/*画面幅が767px以下の場合（スマホ）に適用するCSSを記入*/
 @media screen and (max-width: 900px) {
   .wrapper {
     width: calc( 100% - 32px );
     margin: 0 auto;
   }
-
   .header {
     .header-wrapper {
       .logo {
-        // background: lime;
         padding-left: 25px;
         padding-top: 25px;
         margin-bottom: 28.7px;
       }
-
       .btn {
         height: 75px;
         width: 75px;
@@ -332,6 +404,7 @@ img {
   }
 
   .main-visual {
+    margin-bottom: 85px;
     .main-visual-wrapper {
       // background-color: yellow;
       display: block;
@@ -365,7 +438,33 @@ img {
       }
     }
   }
+  .heading3 {
+    margin-bottom: 60px;
+    &::after {
+      width:80px;
+      left:calc( 50% - 40px );
+    }
   
+  }
+  .reason {
+    .reason-list-wrapper {
+      padding: 40px 0;
+      .reason-list {
+        .reason-desc-wrapper {
+          // background-color: skyblue;
+          padding: 1em;
+          width: calc( 100vw - 16px );
+          .reason-desc {
+            .reason-heading {
+              font-size: 1.5rem;
+            }
+          }
+        }
+
+      }
+      
+    }
+  }
 }
 
 /* 作業用CSS */

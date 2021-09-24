@@ -48,6 +48,7 @@ img {
 
 .wrapper {
   width: 830px;
+  margin: 0 auto;
 }
 
 /* ヘッダー */
@@ -201,6 +202,10 @@ img {
   display: block;
 }
 
+.main-visual {
+  margin-bottom: 120px;
+}
+
 .main-visual .main-visual-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -343,7 +348,97 @@ img {
   }
 }
 
-/*画面幅が767px以下の場合（スマホ）に適用するCSSを記入*/
+.heading3 {
+  display: inline-block;
+  font-size: 2.25rem;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.heading3::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #333;
+  position: absolute;
+  bottom: -10px;
+  left: calc( 50% - 50px);
+}
+
+.reason, .wrapper {
+  text-align: center;
+}
+
+.reason-list-wrapper {
+  background: #FF2A2A;
+  padding: 80px 0;
+}
+
+.reason-list-wrapper .reason-list:nth-child(even) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.reason-list-wrapper .reason-list .reason-desc-wrapper {
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 70px 0;
+  width: 700px;
+}
+
+.reason-list-wrapper .reason-list .reason-desc-wrapper .icon-pc {
+  height: 60px;
+  width: 87px;
+}
+
+.reason-list-wrapper .reason-list .reason-desc-wrapper .teacher-img {
+  border-radius: 10px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 60px;
+}
+
+.reason-list-wrapper .reason-list .reason-desc-wrapper .reason-desc {
+  padding-left: 30px;
+}
+
+.reason-list-wrapper .reason-list .reason-desc-wrapper .reason-desc .reason-heading {
+  color: #FF2A2A;
+  font-size: 1.75rem;
+  text-align: left;
+}
+
+.reason-list-wrapper .reason-list .reason-desc-wrapper .reason-desc .desc {
+  font-size: 1.125rem;
+  text-align: left;
+}
+
+.reason-list-wrapper .reason-list:nth-child(odd) .reason-desc-wrapper {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.reason-list-wrapper .reason-list:nth-child(even) .reason-desc-wrapper {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.reason-list-wrapper .reason-list:not(:last-child) .reason-desc-wrapper {
+  margin-bottom: 40px;
+}
+
 @media screen and (max-width: 900px) {
   .wrapper {
     width: calc( 100% - 32px);
@@ -368,6 +463,9 @@ img {
   .header .header-wrapper .btn-line::after {
     -webkit-transform: translateY(11px);
             transform: translateY(11px);
+  }
+  .main-visual {
+    margin-bottom: 85px;
   }
   .main-visual .main-visual-wrapper {
     display: block;
@@ -396,6 +494,23 @@ img {
   .main-visual .main-visual-wrapper .main-visual-copy .entry-btn1 {
     font-size: 1.5rem;
     padding: 8px 67px;
+  }
+  .heading3 {
+    margin-bottom: 60px;
+  }
+  .heading3::after {
+    width: 80px;
+    left: calc( 50% - 40px);
+  }
+  .reason .reason-list-wrapper {
+    padding: 40px 0;
+  }
+  .reason .reason-list-wrapper .reason-list .reason-desc-wrapper {
+    padding: 1em;
+    width: calc( 100vw - 16px);
+  }
+  .reason .reason-list-wrapper .reason-list .reason-desc-wrapper .reason-desc .reason-heading {
+    font-size: 1.5rem;
   }
 }
 
