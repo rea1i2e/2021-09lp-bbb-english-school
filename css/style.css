@@ -46,9 +46,14 @@ img {
   vertical-align: bottom;
 }
 
+ul {
+  list-style: none;
+}
+
 .wrapper {
-  width: 830px;
-  margin: 0 auto;
+  width: 860px;
+  margin: 0 auto 120px;
+  min-height: 200px;
 }
 
 /* ヘッダー */
@@ -215,8 +220,10 @@ img {
 
 .main-visual .main-visual-wrapper .main-visual-copy {
   position: absolute;
-  top: 283.719px;
+  top: 50%;
   left: 135px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   z-index: 1;
 }
 
@@ -351,8 +358,8 @@ img {
 .heading3 {
   display: inline-block;
   font-size: 2.25rem;
-  position: relative;
   margin-bottom: 100px;
+  position: relative;
 }
 
 .heading3::after {
@@ -368,6 +375,7 @@ img {
 
 .reason, .wrapper {
   text-align: center;
+  margin-bottom: 120px;
 }
 
 .reason-list-wrapper {
@@ -439,6 +447,81 @@ img {
   margin-bottom: 40px;
 }
 
+.voice .voice-list-wrapper {
+  text-align: left;
+}
+
+.voice .voice-list-wrapper .voice-list .voice-desc-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.voice .voice-list-wrapper .voice-list .voice-desc-wrapper .voice-member-wrapper {
+  text-align: center;
+}
+
+.voice .voice-list-wrapper .voice-list .voice-desc-wrapper .voice-member-wrapper .voice-member-img {
+  border-radius: 50%;
+  height: 120px;
+  margin-bottom: 10px;
+  width: 120px;
+}
+
+.voice .voice-list-wrapper .voice-list .voice-desc-wrapper .voice-member-wrapper .members-name {
+  font-size: .75rem;
+}
+
+.voice .voice-list-wrapper .voice-list .voice-desc-wrapper .voice-member-wrapper .attribute {
+  font-size: .875rem;
+}
+
+.voice .voice-list-wrapper .voice-list .voice-desc-wrapper .members-voice {
+  background-color: #E9F1FB;
+  border-radius: 15px;
+  display: inline-block;
+  margin: 0 15px 1.5em 15px;
+  padding: 20px;
+  position: relative;
+  width: 60%;
+}
+
+.voice .voice-list-wrapper .voice-list:nth-child(odd) .voice-desc-wrapper {
+  position: relative;
+}
+
+.voice .voice-list-wrapper .voice-list:nth-child(odd) .voice-desc-wrapper .members-voice::after {
+  content: "";
+  position: absolute;
+  top: 70%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #E9F1FB;
+}
+
+.voice .voice-list-wrapper .voice-list:nth-child(even) .voice-desc-wrapper {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  position: relative;
+}
+
+.voice .voice-list-wrapper .voice-list:nth-child(even) .voice-desc-wrapper .members-voice::after {
+  content: "";
+  position: absolute;
+  top: 70%;
+  left: 100%;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #E9F1FB;
+}
+
+.voice .voice-list-wrapper .voice-list:not(:last-child) {
+  margin-bottom: 60px;
+}
+
 @media screen and (max-width: 900px) {
   .wrapper {
     width: calc( 100% - 32px);
@@ -499,6 +582,7 @@ img {
     padding: 8px 67px;
   }
   .heading3 {
+    font-size: 1.75rem;
     margin-bottom: 60px;
   }
   .heading3::after {
@@ -515,15 +599,36 @@ img {
   .reason .reason-list-wrapper .reason-list .reason-desc-wrapper .reason-desc .reason-heading {
     font-size: 1.5rem;
   }
+  .voice .voice-list-wrapper .voice-list:nth-child(odd) .voice-desc-wrapper, .voice .voice-list-wrapper .voice-list:nth-child(even) .voice-desc-wrapper {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .voice .voice-list-wrapper .voice-list:nth-child(odd) .voice-desc-wrapper .members-voice, .voice .voice-list-wrapper .voice-list:nth-child(even) .voice-desc-wrapper .members-voice {
+    position: relative;
+    width: 100%;
+  }
+  .voice .voice-list-wrapper .voice-list:nth-child(odd) .voice-desc-wrapper .members-voice::after, .voice .voice-list-wrapper .voice-list:nth-child(even) .voice-desc-wrapper .members-voice::after {
+    content: "";
+    position: absolute;
+    top: calc( 100% + 15px);
+    left: 50%;
+    margin-left: -15px;
+    margin-bottom: 15px;
+    border: 15px solid transparent;
+    border-top: 15px solid #E9F1FB;
+  }
+  .voice .voice-list-wrapper .voice-list:not(:last-child) {
+    margin-bottom: 40px;
+  }
 }
 
 /* 作業用CSS */
 /* .first-view { display: none; } */
 /* header { display: none; } */
-/* #about { display: none; }  */
-/* #feature { display: none; }  */
-/* #plan { display: none; }  */
-/* #news { display: none; }  */
-/* #access { display: none; }  */
 /* footer { display: none; }  */
 /*# sourceMappingURL=style.css.map */
