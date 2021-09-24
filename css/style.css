@@ -567,6 +567,8 @@ ul {
     margin: 0 auto;
     position: static;
     text-align: center;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     width: calc( 100% - 32px);
   }
   .main-visual .main-visual-wrapper .main-visual-copy .copy {

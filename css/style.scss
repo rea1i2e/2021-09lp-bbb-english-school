@@ -497,6 +497,7 @@ ul {
         margin: 0 auto;      
         position: static;
         text-align: center;
+        transform: translateY(0);
         width: calc( 100% - 32px );
         .copy {
           // background-color: yellowgreen;
