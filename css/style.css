@@ -470,10 +470,11 @@ ul {
 
 .voice .voice-list-wrapper .voice-list .voice-desc-wrapper .voice-member-wrapper .members-name {
   font-size: .75rem;
+  font-weight: 400;
 }
 
 .voice .voice-list-wrapper .voice-list .voice-desc-wrapper .voice-member-wrapper .attribute {
-  font-size: .875rem;
+  font-size: .75rem;
 }
 
 .voice .voice-list-wrapper .voice-list .voice-desc-wrapper .members-voice {
@@ -577,6 +578,7 @@ ul {
 
 .about .wrapper .about-list-wrapper .about-list .about-subtitle {
   font-size: 1.125rem;
+  font-weight: 700;
   padding-bottom: 30px;
 }
 
@@ -779,6 +781,12 @@ ul {
   }
   .about .wrapper .about-list-wrapper .about-list:nth-last-child(2) {
     margin-bottom: 32px;
+  }
+  .about .wrapper .about-list-wrapper .about-list .about-title {
+    font-size: 1.5rem;
+  }
+  .about .wrapper .about-list-wrapper .about-list .about-subtitle {
+    font-size: 1rem;
   }
   .entry {
     padding: 80px 0;

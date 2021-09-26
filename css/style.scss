@@ -387,9 +387,10 @@ ul {
           }
           .members-name {
             font-size: .75rem;
+            font-weight: 400;
           }
           .attribute {
-            font-size: .875rem;
+            font-size: .75rem;
           }
         }
         .members-voice {
@@ -468,6 +469,7 @@ ul {
         }
         .about-subtitle {
           font-size: 1.125rem;
+          font-weight: 700;
           padding-bottom: 30px;
         }
         .about-desc {
@@ -676,6 +678,12 @@ ul {
           &:nth-last-child(2) {
             margin-bottom: 32px;
             // background-color: pink;
+          }
+          .about-title {
+            font-size: 1.5rem;
+          }
+          .about-subtitle {
+            font-size: 1rem;
           }
         }
       }
