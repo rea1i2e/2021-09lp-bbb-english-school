@@ -45,6 +45,16 @@ ul {
   list-style: none;
 }
 
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.message-404 {
+  flex: 1;
+}
+
 .wrapper {
   // background: silver;
   width: 860px;
@@ -72,7 +82,9 @@ ul {
 
 /* ヘッダー */
 .header {
+  background: inherit;
   .header-wrapper {
+    background: inherit;
     // background: #ccc;
     .logo {
       text-align: left;
@@ -481,33 +493,35 @@ ul {
   }
 } // .aboutここまで
 
+.heading3b {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.copy2 {
+  font-size: 1.125rem;
+  margin-bottom: 40px;
+}
+
+.entry-btn2 {
+  background-color: $main-color;
+  border-radius: 40px;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  height: 58px;
+  line-height: 58px;
+  width: 100%;
+  &:hover {
+    background-color: #fff;
+    border: 4px solid $main-color;
+    color: $main-color
+  }
+}
 .entry {
   padding: 120px 0;
-  .heading3b {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-  }
-  .copy2 {
-    font-size: 1.125rem;
-    margin-bottom: 40px;
-  }
-  .entry-btn2 {
-    background-color: $main-color;
-    border-radius: 40px;
-    color: #fff;
-    display: inline-block;
-    font-size: 1.75rem;
-    font-weight: 700;
-    height: 58px;
-    line-height: 58px;
-    width: 100%;
-    &:hover {
-      background-color: #fff;
-      border: 4px solid $main-color;
-      color: $main-color
-    }
-  }
 }
 .footer {
   background-color: #E8E8E8;

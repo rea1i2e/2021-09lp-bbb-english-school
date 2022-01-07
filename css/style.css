@@ -50,6 +50,23 @@ ul {
   list-style: none;
 }
 
+.site-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
+.message-404 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 .wrapper {
   width: 860px;
   margin: 0 auto 120px;
@@ -75,7 +92,12 @@ ul {
 }
 
 /* ヘッダー */
+.header {
+  background: inherit;
+}
+
 .header .header-wrapper {
+  background: inherit;
   /***** 真ん中のバーガー線 *****/
   /****** 上下のバーガー線 *****/
   /***** メニューオープン時 *****/
@@ -586,22 +608,18 @@ ul {
   text-align: left;
 }
 
-.entry {
-  padding: 120px 0;
-}
-
-.entry .heading3b {
+.heading3b {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 5px;
 }
 
-.entry .copy2 {
+.copy2 {
   font-size: 1.125rem;
   margin-bottom: 40px;
 }
 
-.entry .entry-btn2 {
+.entry-btn2 {
   background-color: #FF2A2A;
   border-radius: 40px;
   color: #fff;
@@ -613,10 +631,14 @@ ul {
   width: 100%;
 }
 
-.entry .entry-btn2:hover {
+.entry-btn2:hover {
   background-color: #fff;
   border: 4px solid #FF2A2A;
   color: #FF2A2A;
+}
+
+.entry {
+  padding: 120px 0;
 }
 
 .footer {
